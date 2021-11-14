@@ -4,6 +4,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -22,13 +23,28 @@ public class MainActivity extends AppCompatActivity implements MToolBar.SearchVi
 
         mToolBar = findViewById(R.id.main_mtoolbar);
 
-        mToolBar.changeShowview(true); // true：中间显示搜索框, false: 显示文字标题
-        mToolBar.setTitle("gg");
-        mToolBar.setBackgroundColor(ContextCompat.getColor(this,R.color.colorAccent));
+        mToolBar.changeShowview(false); // true：中间显示搜索框, false: 显示文字标题
+        mToolBar.setBackgroundColor(ContextCompat.getColor(this,R.color.colorRed));
         // 搜索框
         // mToolBar.setShowEditPage(true); // true 当页面跳转
-        mToolBar.setSearchViewListener(this);
-        mToolBar.addRightSearchImage(R.drawable.search_icon);
+        // mToolBar.setSearchViewListener(this);
+        // mToolBar.addRightSearchImage(R.drawable.search_icon);
+
+
+        mToolBar.setTitle("标题");
+        mToolBar.setTitleTextColor(Color.WHITE);
+        mToolBar.addLeftImage(R.mipmap.sback, new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        mToolBar.addRightImage(R.mipmap.serma, new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 
     @Override
