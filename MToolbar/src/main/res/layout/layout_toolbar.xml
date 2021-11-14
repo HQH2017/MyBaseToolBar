@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mRootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/mStatusBar"
+        android:layout_width="match_parent"
+        android:layout_height="17dp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:minHeight="?actionBarSize"
+        android:orientation="horizontal">
+        <!-- 左边一些按钮 -->
+        <LinearLayout
+            android:id="@+id/mLayoutLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:gravity="left"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+        </LinearLayout>
+        <!-- 中间一些按钮 -->
+        <LinearLayout
+            android:id="@+id/mLayoutCenter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            >
+            <!-- 主题文字-->
+            <TextView
+                android:id="@+id/mTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:ellipsize="none"
+                android:gravity="center"
+                android:minWidth="50dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:singleLine="true"
+                android:textColor="#212121"
+                android:textSize="18sp"
+                />
+            <!-- 搜索框 -->
+            <FrameLayout
+                android:id="@+id/search_fl"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/search_et_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/search_edittext_shape"
+                    android:drawableLeft="@drawable/search_icon"
+                    android:drawablePadding="5dp"
+                    android:hint="请输入关键字"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/search_iv_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/iv_delete_bg"
+                    android:visibility="gone" />
+            </FrameLayout>
+        </LinearLayout>
+        <!-- 右边一些按钮 -->
+        <LinearLayout
+            android:id="@+id/mLayoutRight"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal"
+            android:paddingRight="10dp">
+        </LinearLayout>
+    </LinearLayout>
+    <!-- 底部线 -->
+    <View
+        android:id="@+id/mBottomDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#BBB"
+        android:visibility="gone" />
+    <!-- 搜索栏列表 -->
+    <ListView
+        android:visibility="gone"
+        android:id="@+id/search_lv_tips"
+        android:background="@drawable/lv_search_tips_bg"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+    </ListView>
+</LinearLayout>
