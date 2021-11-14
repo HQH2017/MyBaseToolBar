@@ -304,6 +304,18 @@ public class MToolBar extends Toolbar implements View.OnClickListener{
         }
     }
 
+    /** 左边同时有文字和图标 **/
+    public void setLeftImageTxt(@DrawableRes int resId, CharSequence text, int textColorId, float textSize, OnClickListener listener) {
+        if (resId == 0) {
+            return;
+        }
+        if (mBackView != null) removeLeftView(mBackView);//限制只能添加一个BackButton
+        mBackView = createBackLayout(mContext, resId, text, textColorId, textSize, listener);
+        int padding = ScreenUtil.dip2px(mContext, 1);
+        mBackView.setPadding(0, 0, padding, 0);
+        addLeftView(mBackView);
+    }
+
     /**
      * 隐藏/显示中间的title 或  搜索框
      * true :隐藏文字同时显示搜索框； false:则相反
